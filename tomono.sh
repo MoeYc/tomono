@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail ${DEBUGSH+-x}
-shopt -s inherit_errexit
+# shopt -s inherit_errexit
 
 # Poor man’s arg parse :/
 arg="${1-}"
@@ -50,7 +50,7 @@ esac
 empty_tree="$(git hash-object -t tree /dev/null)"
 
 # Note this is top-level in the script so it’s reading from the script’s stdin
-while IFS=$'\r'"$IFS" read -r repourl reponame repopath; do
+while read -r repourl reponame repopath; do
     if [[ -z "$repopath" ]]; then
         repopath="$reponame"
     fi

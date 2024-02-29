@@ -4,3 +4,8 @@ literate-html.el
 test
 
 # Don't ignore the tomono script, it's easier for people to just download it
+
+# for local test
+/core
+/my-repos.txt
+/test.sh
